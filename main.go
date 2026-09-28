@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 	"time"
 )
 
@@ -28,7 +29,6 @@ func input(title string) string {
 func setEnemyHealth() int {
 	return randNum(80, 120)
 }
-
 func getLiteAttack() int {
 	return randNum(2, 5)
 }
@@ -84,7 +84,7 @@ func runGame() bool {
 		fmt.Println("В этот раз не повезло :( Бой проигран.")
 	}
 	answer := input("Чтобы сыграть ещё раз, введи букву [y] или [Y]: ")
-	return answer == "Y"
+	return strings.ToUpper(answer) == "Y"
 }
 
 func main() {
